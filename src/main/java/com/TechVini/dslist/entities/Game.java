@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity //configura a classe java para ser equivalente a uma tabela do banco relacional
-@Table(name = "tb-game") //modifica o nome da tabela do banco de dados
+@Table(name = "tb_game") //modifica o nome da tabela do banco de dados
 public class Game {
 	
 @Id	//configura o id como chave primária
@@ -24,7 +24,11 @@ private String genre;
 private String platforms;
 private Double score;
 private String imgUrl;
+
+@Column(columnDefinition = "TEXT")
 private String shortDescription;
+
+@Column(columnDefinition = "TEXT") // anotação para que o banco de dados aceite mais do que 255 caracteres
 private String longDescription;
 
 public Game() {
